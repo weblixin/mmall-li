@@ -1,6 +1,10 @@
 "use strict";
 
-const test = require('../module.js')
-const test = require('./index.css')
+require('page/common/nav/index.js')
+require('page/common/header/index.js')
+var navSide = require('page/common/nav-side/index.js')
+var _mm = require('util/mm.js')
 
-//console.log(test)
+navSide.init({
+	name: 'user-center'
+})
