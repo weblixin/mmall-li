@@ -3,4 +3,5 @@
 /dist/
 npm-debug.log
 .project
+package-lock.json
 
