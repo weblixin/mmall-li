@@ -93,6 +93,26 @@ var _user = {
 			error: reject
 		})
 	},
+	// 更新个人信息
+	updateUserInfo: function(userInfo, resolve, reject) {
+		_mm.request({
+			url: _mm.getServerUrl('/user/update_information.do'),
+			method: 'post',
+			data: userInfo,
+			success: resolve,
+			error: reject
+		})
+	},
+	// 登录状态下修改密码
+	updatePassword: function(userInfo, resolve, reject) {
+		_mm.request({
+			url: _mm.getServerUrl('/user/reset_password.do'),
+			method: 'post',
+			data: userInfo,
+			success: resolve,
+			error: reject
+		})
+	}
 }
 
 module.exports = _user;
