@@ -8,6 +8,15 @@ var _cart = {
 			success: resolve,
 			error: reject
 		})
+	},
+	// 添加到购物车
+	addToCart: function(productId, resolve, reject) {
+		_mm.request({
+			url: _mm.getServerUrl('/cart/add.do'),
+			success: resolve,
+			data: productId,
+			error: reject
+		})
 	}
 }
 
