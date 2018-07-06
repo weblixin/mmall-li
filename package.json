@@ -1,31 +1,28 @@
 {
-  "name": "mmall-li",
+  "name": "mmall-fe",
   "version": "1.0.0",
-  "description": "mmall 前端代码",
+  "description": "mmall前端代码",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "set WEBPACK_ENV=dev && webpack-dev-server --inline --port 8088",
-    "build": "webpack"
+    "dev": "WEBPACK_ENV=dev webpack-dev-server --inline --port 8088",
+    "dev_win": "set WEBPACK_ENV=dev && webpack-dev-server --inline --port 8088",
+    "dist": "WEBPACK_ENV=online webpack -p",
+    "dist_win": "set WEBPACK_ENV=online && webpack -p"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/weblixin/mmall-li.git"
+    "url": "git@git.oschina.net:happymmall/mmall-fe.git"
   },
-  "author": "Lee",
+  "author": "Rosen",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/weblixin/mmall-li/issues"
-  },
-  "homepage": "https://github.com/weblixin/mmall-li#readme",
   "devDependencies": {
-    "css-loader": "^0.28.11",
+    "css-loader": "^0.28.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.11.1",
-    "html-loader": "^0.5.5",
+    "html-loader": "^0.4.5",
     "html-webpack-plugin": "^2.28.0",
-    "style-loader": "^0.21.0",
-    "url-loader": "^1.0.1",
+    "style-loader": "^0.17.0",
+    "url-loader": "^0.5.8",
     "webpack": "^1.15.0",
     "webpack-dev-server": "^1.16.5"
   },

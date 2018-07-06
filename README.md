@@ -1,32 +1,23 @@
-# mmall-li
-mmall商城项目--用户端
 
-"devDependencies": {
+项目初始化步骤
 
-"css-loader": "^0.28.1",
+1.安装nodejs环境,推荐使用v4.4.7
+    下载地址 : https://nodejs.org/download/release/v4.4.7/
 
-"extract-text-webpack-plugin": "^1.0.1",
+2.全局安装webpack v^1.15.0
+    命令: (sudo) npm install -g webpack@^1.15.0
 
-"file-loader": "^0.11.1",
+3.全局安装webpack-dev-server v^1.16.5
+    命令: (sudo) npm install -g webpack-dev-server@^1.16.5
 
-"html-loader": "^0.4.5",
+4.在慕课网上下载源码，解压缩
 
-"html-webpack-plugin": "^2.28.0",
+5.在项目根目录执行npm初始化
+    命令: npm install (--registry=https://registry.npm.taobao.org)
 
-"style-loader": "^0.17.0",
+6.启动项目
+    开发模式: npm run dev (windows系统上为npm run dev_win)
+    生产模式: npm run dist (windows系统上为npm run dist_win)
 
-"url-loader": "^0.5.8",
-
-"webpack": "^1.15.0",
-
-"webpack-dev-server": "^1.16.5"
-
-},
-
-"dependencies": {
-
-"font-awesome": "^4.7.0",
-
-"hogan.js": "^3.0.2"
-
-}
+7.开发模式下预览项目
+    访问：http://localhost:8088/dist/view/index.html

@@ -1,64 +1,61 @@
 /*
 * @Author: Rosen
-* @Date:   2017-06-07 10:30:06
+* @Date:   2017-06-06 09:25:41
 * @Last Modified by:   Rosen
-* @Last Modified time: 2017-06-08 14:57:25
+* @Last Modified time: 2017-06-09 19:49:33
 */
 
 'use strict';
 var _mm = require('util/mm.js');
 
-var _address = {
-    // 获取地址列表
-    getAddressList : function(resolve, reject){
+var _order = {
+    // 获取商品列表
+    getProductList : function(resolve, reject){
         _mm.request({
-            url     : _mm.getServerUrl('/shipping/list.do'),
+            url     : _mm.getServerUrl('/order/get_order_cart_product.do'),
+            success : resolve,
+            error   : reject
+        });
+    },
+    // 提交订单
+    createOrder : function(orderInfo, resolve, reject){
+        _mm.request({
+            url     : _mm.getServerUrl('/order/create.do'),
+            data    : orderInfo,
+            success : resolve,
+            error   : reject
+        });
+    },
+    // 获取订单列表
+    getOrderList : function(listParam, resolve, reject){
+        _mm.request({
+            url     : _mm.getServerUrl('/order/list.do'),
+            data    : listParam,
+            success : resolve,
+            error   : reject
+        });
+    },
+    // 获取订单详情
+    getOrderDetail : function(orderNumber, resolve, reject){
+        _mm.request({
+            url     : _mm.getServerUrl('/order/detail.do'),
             data    : {
-                pageSize : 50
+                orderNo : orderNumber
             },
             success : resolve,
             error   : reject
         });
     },
-    // 新建收件人
-    save : function(addressInfo, resolve, reject){
+    // 取消订单
+    cancelOrder : function(orderNumber, resolve, reject){
         _mm.request({
-            url     : _mm.getServerUrl('/shipping/add.do'),
-            data    : addressInfo,
-            success : resolve,
-            error   : reject
-        });
-    },
-    // 更新收件人
-    update : function(addressInfo, resolve, reject){
-        _mm.request({
-            url     : _mm.getServerUrl('/shipping/update.do'),
-            data    : addressInfo,
-            success : resolve,
-            error   : reject
-        });
-    },
-    // 删除收件人
-    deleteAddress : function(shippingId, resolve, reject){
-        _mm.request({
-            url     : _mm.getServerUrl('/shipping/del.do'),
+            url     : _mm.getServerUrl('/order/cancel.do'),
             data    : {
-                shippingId : shippingId
+                orderNo : orderNumber
             },
             success : resolve,
             error   : reject
         });
-    },
-    // 获取单条收件人信息
-    getAddress : function(shippingId, resolve, reject){
-        _mm.request({
-            url     : _mm.getServerUrl('/shipping/select.do'),
-            data    : {
-                shippingId : shippingId
-            },
-            success : resolve,
-            error   : reject
-        });
-    },
+    }
 }
-module.exports = _address;
+module.exports = _order;
